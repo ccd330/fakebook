@@ -7,22 +7,25 @@ const UserSchema = new Schema(
     username: {
         type: String,
         required: true,
+        unique: true,
         trim: true
     },
     email: {
         type: String,
-        required: true ,
-        trim: true
+        required: true,
+        unique: true,
+        match: /.+\@.+\..+/,
+        trim: true,
         },
         thoughts: [
             {
-                type: ,
+                type: Schema.Types.ObjectId,
                 ref: 'Thought'
             }
         ],
         friends: [
             {
-                type: .
+                type: Schema.Types.ObjectId,
                 ref: 'User'
             }
         ]
@@ -36,9 +39,9 @@ const UserSchema = new Schema(
     }
 );
 
-//get total count of comments and replies on retrieval
+//get total count of friends on retrieval
 UserSchema.virtual('friendCount').get(function() {
-    return this.friends.reduce((total, friend) => total + friend.count.length + 1, 0);
+    return this.friends.length;
 });
 
 //create the User model using the User Schema
