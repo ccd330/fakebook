@@ -18,7 +18,7 @@
   ## Description
   Fakebook is the API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list. It has been built with Express.js for routing, a MongoDB database, and the Mongoose ODM.
   
-  <img src="https://github.com/ccd330/u-develop-it/blob/main/demo.png" />
+  <img src="https://github.com/ccd330/fakebook/blob/main/Screen%20Shot%202022-04-24%20at%207.40.26%20PM.png" />
 
   ## Installation Instructions
   Download file package and install dependencies: Express and Mongoose.
